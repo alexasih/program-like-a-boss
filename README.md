@@ -1,2 +1,2 @@
 # program-like-a-boss
-Coding practice
+Coding practice in preparation for interviews
