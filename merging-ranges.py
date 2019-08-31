@@ -29,3 +29,30 @@ def merge(meetings):
             meetings[k] = r[j]
             j+=1
             k+=1
+            
+def merge_ranges(meetings):
+   
+    merge(meetings)
+    
+    # merge list
+    counter = 0
+    ret = []
+    
+    while counter < len(meetings)-2:
+        
+        if meetings[counter][1] >= meetings[counter+1][0]:
+            ret.append((meetings[counter][0],meetings[counter+1][1]))
+            counter+=1
+            print("counter",counter)
+            print("length of meetings",len(meetings))
+        
+        # if meetings[counter+1][1] >= meetings[counter][0]:
+        #     ret.append((meetings[counter+1][0],meetings[counter][1]))
+        #     counter+=1
+        #     print("counter",counter)
+        #     print("length of meetings",len(meetings))
+        
+        counter+=1
+            
+    return ret
+            
