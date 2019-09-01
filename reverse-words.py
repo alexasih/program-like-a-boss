@@ -2,7 +2,7 @@ def reverse_characters(message, left_index, right_index):
     
     temp = ''
 
-    while left_index < len(message)//2:
+    while left_index < right_index:
         temp = message[left_index]
         message[left_index] = message[right_index]
         message[right_index] = temp
@@ -13,17 +13,12 @@ def reverse_words(message):
     
     # Decode the message by reversing the words
     
-    reverse_characters(message, 0, -1)
+    reverse_characters(message, 0, len(message)-1)
 
     left_index = 0
     
-    for i in range(len(message)):
+    for i in range(len(message)+1):
         
-        if i==len(message):
-            reverse_characters(message, left_index, i)
-        elif message[i] == ' ':
+        if (i==len(message)) or (message[i] == ' '):
             reverse_characters(message, left_index, i-1)
-        
-        
-        left_index = i+1
-        
+            left_index = i+1
