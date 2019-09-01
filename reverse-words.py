@@ -17,8 +17,10 @@ def reverse_words(message):
 
     left_index = 0
     
-    for i in range(len(message)+1):
+    for i in range(len(message)):
         
-        if (i==len(message)) or (message[i] == ' '):
+        if (i==len(message)-1):
+            reverse_characters(message, left_index, i)
+        elif (message[i] == ' '):
             reverse_characters(message, left_index, i-1)
             left_index = i+1
