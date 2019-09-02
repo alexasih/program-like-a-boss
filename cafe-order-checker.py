@@ -30,8 +30,6 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
     while i < len(take_out_orders) and k < len(served_orders):
 
         if served_orders[k] != take_out_orders[i]:
-            print("this is k",k)
-            print("this is i",i)
             return False
         i+=1
         k+=1
@@ -39,8 +37,6 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
     
     while i<len(dine_in_orders) and k < len(served_orders):
         if served_orders[k] != dine_in_orders[j]:
-            print("this is k",k)
-            print("this is j",j)
             return False
         j+=1
         k+=1 
