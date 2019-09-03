@@ -3,9 +3,10 @@ class WordCloudData(object):
     def __init__(self, input_string):
 
         # Count the frequency of each word
-        
         self.words_to_counts = {}
-        
+        self.add_to_dict(input_string)
+    
+    def add_to_dict(self, input_string):
         # make sure all punctuation is removed
         for val in input_string:
             if val in ":,!?;.":
@@ -14,7 +15,6 @@ class WordCloudData(object):
         if " - " in input_string:
             input_string = input_string.replace(" - "," ")
             
-        
         input_string = input_string.split()
         
         for word in input_string:
