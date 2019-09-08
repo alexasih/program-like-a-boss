@@ -3,6 +3,7 @@ def find_rotation_point(words):
     if len(words) < 2:
         raise(Exception)
     # Find the rotation point in the list using binary search
+    first_word = words[0]
     floor_index = -1
     ceiling_index = len(words)
     
@@ -14,14 +15,13 @@ def find_rotation_point(words):
         
         guess_value = words[guess_index]
 
-        if guess_value == target:
-            return guess_index
-
-        if guess_value > target:
-            # Target is to the left, so move ceiling to the left
+        if guess_value < first_word:
             ceiling_index = guess_index
+        
         else:
-            # Target is to the right, so move floor to the right
             floor_index = guess_index
+        
+        if floor_index + 1 == ceiling_index:
+            return ceiling_index
 
     return -1
