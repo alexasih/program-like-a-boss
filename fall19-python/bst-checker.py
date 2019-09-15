@@ -1,3 +1,4 @@
+
 def is_binary_search_tree(root):
 
     # Determine if the tree is a valid binary search tree
@@ -7,21 +8,19 @@ def is_binary_search_tree(root):
     if root is None:
         return True
     
-    nodes = []
-    nodes.append(root)
+    nodes = [(root, -float('inf'), float('inf'))]
     
     while len(nodes):
         
-        node = nodes.pop()
+        node, lower_bound, upper_bound = nodes.pop()
         
-        if (node.left.value > node.value) or (node.right.value < node.value):
+        if (lower_bound >= node.value) or (upper_bound <= node.value):
             return False
         
-        else:
-            if node.left:
-                nodes.append(node.left)
-            if node.right:
-                nodes.append(node.right)
+        if node.left:
+            nodes.append((node.left, lower_bound, node.value))
+        if node.right:
+            nodes.append((node.right, node.value, upper_bound))
 
 
     return True
