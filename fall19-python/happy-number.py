@@ -8,7 +8,7 @@ class Solution:
         
         tracker = {}
         
-        while n > 1:
+        while n != 1:
             
             if n in tracker:
                 return False
