@@ -16,7 +16,6 @@ class Solution:
         ret = []
   
         while(queue): 
-            # Print front of queue and remove it from queue 
             temp = []
             new_queue = []
             for node in queue:
