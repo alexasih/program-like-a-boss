@@ -20,8 +20,8 @@ Sorting
 Selection Sort
 Bubble Sort
 Insertion Sort
-Merge Sort
+Merge Sort (*)
 Quick Sort
 Heap Sort
-Counting Sort
+Counting Sort (*)
 Radix Sort
