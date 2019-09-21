@@ -18,7 +18,6 @@ class Solution:
             # continue to traverse with nxt being set to next node
             nxt = curr.next 
             # current is the node you are at right now. 
-            # you want curr.next, the node right after curr, to be equal to previous
             # flips order so pointer to next points to the previous element, reversing the linkedlist
             curr.next = prev
             # prev becomes curr, so you can keep track of every node that comes right before current node
