@@ -26,6 +26,7 @@ class Solution:
             curr = nxt
         
         # we return prev because this is the new head of the reversed linked list
+        # since prev ends at last node in linkedlist - it becomes the head
         return prev
         
         
