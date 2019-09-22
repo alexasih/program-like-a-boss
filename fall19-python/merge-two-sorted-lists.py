@@ -56,9 +56,11 @@ class Solution:
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         
-        # base case
-        if l1 is None or l2 is None:
-            return l1 or l2
+        # base cases
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
         
         if l1.val < l2.val:
             l1.next = self.mergeTwoLists(l1.next, l2)
