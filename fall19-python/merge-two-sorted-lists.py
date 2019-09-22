@@ -4,6 +4,9 @@
 #         self.val = x
 #         self.next = None
 
+
+# ITERATIVE SOLUTION
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         
@@ -41,3 +44,25 @@ class Solution:
         # return head.next NOT ret, because ret is the pointer to current node
         # so it points to last node after iterating over entire linked List
         return head.next
+
+# RECURSIVE SOLUTION
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        
+        # base case
+        if l1 is None or l2 is None:
+            return l1 or l2
+        
+        if l1.val < l2.val:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            l2.next = self.mergeTwoLists(l1, l2.next)
+            return l2
