@@ -38,3 +38,38 @@ def reverse(list_of_chars):
         rev-=1
         
     pass
+
+# ANOTHER IN-PLACE SOLUTION (SIMILAR TO ABOVE)
+
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        
+        # strings are immutable - this is why we are using char
+        # so in a real string problem, first convert the string into a list
+        
+        val = len(s)-1
+        for i in range(len(s)//2):
+            temp = s[i]
+            s[i] = s[val]
+            s[val] = temp
+            val -= 1
+            
+            
+# ONE LINE PYTHON SOLUTION
+
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        
+        # strings are immutable - this is why we are using char
+        # so in a real string problem, first convert the string into a list
+        
+        return s.reverse()
+            
+            
+        
