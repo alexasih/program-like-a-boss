@@ -1,3 +1,19 @@
+# USING SET
+
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        
+        ret = []
+        
+        repeat = set(nums)
+
+        for i in range(1,len(nums)+1):
+            if i not in repeat:
+                ret.append(i)
+                
+        return ret
+
+# USING DICTIONARY
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         
