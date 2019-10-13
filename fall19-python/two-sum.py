@@ -1,3 +1,20 @@
+# optimized
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        if nums == [] or len(nums) == 1:
+            return []
+        
+        dictionary = {}
+        
+        for i in range(len(nums)):
+            if nums[i] not in dictionary:
+                dictionary[target-nums[i]] = i
+            else: 
+                return [dictionary[nums[i]], i]
+                
+
 # solution so slow time limit exceeded lol
 
 class Solution:
