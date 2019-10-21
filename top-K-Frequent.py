@@ -10,6 +10,11 @@ class Solution:
             else:
                 d[word]+=1
         
-        ret = sorted(d, key=lambda word: (-d[word], word))
+        # sort the dictionary d by the dictionary value
+        # using lambda for the key value, so that it sorts
+        # by each dictionary value in reverse (greatest to least)
+        # for each word in dictionary
+        ret = sorted(d, key=lambda word: (-d[word],word))
+        # why can't we do just (-d[word])?
         
         return ret[:k]
