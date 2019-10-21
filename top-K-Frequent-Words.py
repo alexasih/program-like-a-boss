@@ -12,9 +12,11 @@ class Solution:
         
         # sort the dictionary d by the dictionary value
         # using lambda for the key value, so that it sorts
-        # by each dictionary value in reverse (greatest to least)
+        # by each dictionary value in reverse (greatest value to least)
         # for each word in dictionary
-        ret = sorted(d, key=lambda word: (-d[word],word))
-        # why can't we do just (-d[word])?
         
+        # first, sorts by values in dictionary
+        # then sorts again by word, which alphabetizes
+        ret = sorted(d, key=lambda word: (-d[word], word))
+
         return ret[:k]
