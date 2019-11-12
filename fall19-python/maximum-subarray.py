@@ -16,3 +16,15 @@ class Solution:
             
         #return the max sum of all the sums
         return max(nums)
+    
+# O(n)
+
+class Solution:
+    def maxSubArray(self, A):
+        
+        currSum = A[0]
+        maxSum = A[0]
+        for num in A[1:]:
+            currSum = max(num, currSum+num)
+            maxSum = max(maxSum, currSum)
+        return maxSum
